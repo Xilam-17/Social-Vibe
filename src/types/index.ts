@@ -19,6 +19,13 @@ export interface User {
     avatarUrl?: string;
 }
 
+export interface RegisterPayload {
+    username: string;
+    fullName: string;
+    email: string;
+    password: string;
+}
+
 export interface RelationshipDto {
     isFollowing: boolean;
     isFriend: boolean;

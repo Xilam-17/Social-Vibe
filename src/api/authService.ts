@@ -1,4 +1,5 @@
 import api from './axios';
+import type { RegisterPayload } from '../types';
 
 export const login = async (username: string, password: string) => {
     const response = await api.post('/user/login', { username, password });
@@ -9,4 +10,7 @@ export const login = async (username: string, password: string) => {
     return response.data;
 };
 
-export const register = (userData: any) => api.post('/user/register', userData);
+export const register = async (userData: RegisterPayload) => {
+    const response = await api.post('/user/register', userData);
+    return response.data;
+};
